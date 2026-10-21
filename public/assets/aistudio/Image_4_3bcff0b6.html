@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary": "#ffffff", "on-error-container": "#93000a", "surface": "#ebfef7", "secondary": "#366758", "on-secondary-container": "#3a6c5c", "on-error": "#ffffff", "on-background": "#0e1e1b", "inverse-on-surface": "#e2f5ee", "surface-variant": "#d4e7e0", "tertiary-fixed-dim": "#6bdbaa", "secondary-fixed-dim": "#9dd1be", "on-primary": "#ffffff", "outline": "#6f7973", "on-primary-fixed-variant": "#00513b", "surface-container-highest": "#d4e7e0", "inverse-surface": "#23342f", "on-tertiary-fixed-variant": "#005137", "tertiary": "#005137", "secondary-fixed": "#b9eeda", "on-tertiary-container": "#7eedbb", "background": "#ebfef7", "on-secondary-fixed": "#002118", "on-primary-container": "#9be9c6", "on-primary-fixed": "#002116", "on-tertiary-fixed": "#002114", "primary": "#00513b", "on-secondary-fixed-variant": "#1c4f41", "error": "#ba1a1a", "tertiary-container": "#006c4a", "tertiary-fixed": "#88f8c5", "surface-bright": "#ebfef7", "inverse-primary": "#89d6b5", "surface-container-high": "#daece6", "primary-fixed-dim": "#89d6b5", "on-surface": "#0e1e1b", "outline-variant": "#bec9c2", "surface-container-lowest": "#ffffff", "primary-fixed": "a4f3d0", "on-secondary": "#ffffff", "surface-container": "#dff2eb", "surface-container-low": "#e5f8f1", "on-surface-variant": "#3f4944", "primary-container": "#176b50", "surface-tint": "#176b50", "surface-dim": "#ccded8", "secondary-container": "#b6ebd7", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-lg": "1.5rem", "margin-md": "1.5rem", "gutter": "1rem", "margin": "1rem", "space-lg": "1.25rem", "space-md": "0.75rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-lg": "2rem", "space-xl": "2rem" }, "fontFamily": { "body-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-lg-mobile": ["Inter"], "metric-num": ["Inter"], "label-md": ["Inter"], "headline-xl": ["Inter"] }, "fontSize": { "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "metric-num": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 overflow-y-auto px-space-md py-space-md"><div class="flex items-center justify-between pb-space-md mb-space-sm"><div class="flex items-center gap-space-sm"><img alt="Recyvora Brand Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XWz6UyrZ1fK4sFr4JA9xxkNMipjSe4hb7UPFs-2SvvKBR_ZOwpGlgZC0-JsJGUT2KvdExCgGDBBnmL1yd6-NVl97mCIwz10-Mt-XCnchAlyiUh5Vy6eKKuXHiErFR5En20D8rJgkjB_zB6D44yXsHQTUM4LxjcLNIFj8iOjltfgLMp5Y9Xmr7d5NgkCIEjna4XC-7DRR0dlZlBRkJeTRwfR7HI2reC8E5Do9HEJIbj1D5A_wLg6DBY1q55"/><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">Recyvora</span></div><span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-space-xs py-0.5 rounded">Enterprise</span></div><nav class="flex flex-col gap-space-sm flex-1" data-active-classes="bg-primary-container text-on-primary font-label-md text-label-md rounded-lg"><div class="font-label-sm text-label-sm text-outline uppercase tracking-wider px-space-sm pt-space-xs">Overview</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">space_dashboard</span><span>Dashboard</span></a><div class="font-label-sm text-label-sm text-outline uppercase tracking-wider px-space-sm pt-space-sm">Operations</div><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs transition-all bg-primary-container text-on-primary font-label-md text-label-md rounded-lg" data-path="schedule-pickup" href="#"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span>Schedule Pickup</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="my-pickups" href="#"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span>My Pickups</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="e-waste-requests" href="#"><span class="material-symbols-outlined text-[18px]">devices</span><span>E-Waste Requests</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pickup-tracking" href="#"><span class="material-symbols-outlined text-[18px]">route</span><span>Pickup Tracking</span></a><div class="font-label-sm text-label-sm text-outline uppercase tracking-wider px-space-sm pt-space-sm">Commercial</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="scrap-price-estimator" href="#"><span class="material-symbols-outlined text-[18px]">calculate</span><span>Price Estimator</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="marketplace" href="#"><span class="material-symbols-outlined text-[18px]">storefront</span><span>Marketplace</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="my-listings" href="#"><span class="material-symbols-outlined text-[18px]">inventory_2</span><span>My Listings</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="orders" href="#"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span>Orders</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="earnings" href="#"><span class="material-symbols-outlined text-[18px]">payments</span><span>Earnings</span></a><div class="font-label-sm text-label-sm text-outline uppercase tracking-wider px-space-sm pt-space-sm">Intelligence &amp; Reporting</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="ecoguide-ai" href="#"><span class="material-symbols-outlined text-[18px]">smart_toy</span><span>EcoGuide AI</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="environmental-impact" href="#"><span class="material-symbols-outlined text-[18px]">eco</span><span>Environmental Impact</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="reports" href="#"><span class="material-symbols-outlined text-[18px]">analytics</span><span>Reports</span></a><div class="font-label-sm text-label-sm text-outline uppercase tracking-wider px-space-sm pt-space-sm">Account &amp; System</div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="notifications" href="#"><span class="material-symbols-outlined text-[18px]">notifications</span><span>Notifications</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="business-profile" href="#"><span class="material-symbols-outlined text-[18px]">domain</span><span>Business Profile</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="help-support" href="#"><span class="material-symbols-outlined text-[18px]">help_center</span><span>Help &amp; Support</span></a></nav></div><div class="px-space-md py-space-md bg-surface-container/60"><div class="flex items-center justify-between"><div class="flex items-center gap-space-sm min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrD35kzcKUnxlHZK3KEtuIQBtTNj4jGBwWpFRL-k6cTS_ms54HznpRMlsle9XFeF6J69FpfZYdcSeLfoyubBbCB3nVe0nUA_mr81zYAahisQGk9wRVLWZqj_PuL-zo2HUzptOE3QZETnWShbl-cVESkzRhA5AUZkKp4DtL_zHTEjHZg7cBlH4zIBZwlgfcmX9NvIRD2gW8zfyPLwrsmUMel-R6myErJAvIPWSbOd7lYHMDkud7KRUNhw"/><div class="min-w-0"><div class="font-label-md text-label-md text-on-surface font-semibold truncate">Elena Vance</div><div class="font-body-sm text-body-sm text-on-surface-variant truncate">Chief Sustainability Lead</div></div></div><button class="p-1 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high rounded transition-colors" title="Workspace Switcher" type="button"><span class="material-symbols-outlined text-[18px]">unfold_more</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-lg"><div class="flex items-center gap-space-sm w-96"><div class="relative w-full"><span class="material-symbols-outlined absolute left-space-sm top-1/2 -translate-y-1/2 text-[18px] text-outline">search</span><input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline pl-9 pr-space-md py-1.5 rounded text-body-sm font-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search materials, pickups, listings (Cmd+K)" type="text"/></div></div><div class="flex items-center gap-gutter"><div class="flex items-center gap-space-xs bg-surface-container-high px-space-sm py-1 rounded"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm text-secondary font-medium">Operational</span></div><button class="relative p-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span></button><a class="inline-flex items-center gap-space-xs px-space-md py-space-xs bg-primary-container text-on-primary font-label-md text-label-md rounded-lg shadow-sm hover:bg-primary transition-colors" data-path="schedule-pickup" href="#"><span class="material-symbols-outlined text-[16px]">add</span><span>New Request</span></a><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrD35kzcKUnxlHZK3KEtuIQBtTNj4jGBwWpFRL-k6cTS_ms54HznpRMlsle9XFeF6J69FpfZYdcSeLfoyubBbCB3nVe0nUA_mr81zYAahisQGk9wRVLWZqj_PuL-zo2HUzptOE3QZETnWShbl-cVESkzRhA5AUZkKp4DtL_zHTEjHZg7cBlH4zIBZwlgfcmX9NvIRD2gW8zfyPLwrsmUMel-R6myErJAvIPWSbOd7lYHMDkud7KRUNhw"/></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Progress & Context Hero Area -->
+<div class="px-gutter-lg pt-space-lg pb-space-md">
+<!-- Header Block -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-lg">
+<div>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider mb-space-xs">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+<span>Doorstep Logistics Portal</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Schedule a Scrap Pickup</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Select materials, provide weight estimates, and book a verified doorstep collector.</p>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Protocol</p>
+<p class="font-label-md text-label-md text-on-surface font-semibold">ISO 14001 Compliant</p>
+</div>
+</div>
+</div>
+<!-- Stepper Tracker (5 Steps) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm mb-space-md">
+<div class="grid grid-cols-5 gap-space-xs relative">
+<!-- Step 1 (Completed) -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-md text-label-md shadow-sm transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold mt-space-xs">Material Selection</span>
+<span class="font-body-sm text-body-sm text-outline hidden sm:block">Step 1 • Completed</span>
+</div>
+<!-- Step 2 (Completed) -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-md text-label-md shadow-sm transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-semibold mt-space-xs">Material Details</span>
+<span class="font-body-sm text-body-sm text-outline hidden sm:block">Step 2 • Completed</span>
+</div>
+<!-- Step 3 (Active) -->
+<div class="flex flex-col items-center text-center relative">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md shadow-md ring-4 ring-primary-container/20">
+<span>3</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold mt-space-xs">Pickup Schedule</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold hidden sm:block uppercase tracking-wider">In Progress</span>
+</div>
+<!-- Step 4 (Upcoming) -->
+<div class="flex flex-col items-center text-center opacity-60">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md text-label-md">
+<span>4</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant mt-space-xs">Estimated Value</span>
+<span class="font-body-sm text-body-sm text-outline hidden sm:block">Upcoming</span>
+</div>
+<!-- Step 5 (Upcoming) -->
+<div class="flex flex-col items-center text-center opacity-60">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-md text-label-md">
+<span>5</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant mt-space-xs">Review &amp; Confirm</span>
+<span class="font-body-sm text-body-sm text-outline hidden sm:block">Upcoming</span>
+</div>
+</div>
+</div>
+<!-- Step 1 & 2 Completed Summary Pills -->
+<div class="flex flex-wrap items-center gap-space-sm bg-surface-container-low p-space-sm px-space-md rounded-xl">
+<div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary">task_alt</span>
+<span>Manifest Snapshot:</span>
+</div>
+<div class="inline-flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-1 rounded text-on-surface font-label-md text-label-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Aluminium &amp; Copper (Non-Ferrous)</span>
+</div>
+<div class="inline-flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-1 rounded text-on-surface font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-outline">scale</span>
+<span>Estimated 35 kg</span>
+</div>
+<div class="inline-flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-1 rounded text-on-surface font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-primary">eco</span>
+<span>Clean Grade A Scrap</span>
+</div>
+<button class="ml-auto text-primary font-label-sm text-label-sm hover:underline flex items-center gap-0.5" type="button">
+<span>Edit Manifest</span>
+<span class="material-symbols-outlined text-[14px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Step 3 Active Form: 2-Column Responsive Workspace -->
+<div class="px-gutter-lg pb-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg">
+<!-- Left Column: Logistics, Location & Timing (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Section: Address Selection -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md border-b-0">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">pin_drop</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Pickup Address &amp; Dock Info</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Specify the industrial facility entrance for heavy haulage</p>
+</div>
+</div>
+<button class="text-primary font-label-md text-label-md font-semibold hover:text-primary-container flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>Add New Address</span>
+</button>
+</div>
+<div class="space-y-space-md">
+<div>
+<label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1.5" for="address-selector">Selected Facility Address</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md py-2.5 px-space-md rounded appearance-none focus:outline-none focus:ring-1 focus:ring-primary" id="address-selector">
+<option selected="">HQ Bangalore Tech Park - Dock 4 (Saved)</option>
+<option>Bellandur Storage Facility - Gate 3</option>
+<option>Whitefield Assembly Plant - Yard 2</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Address Fields Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="sm:col-span-2">
+<label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1" for="street-addr">Street Address</label>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md px-space-md py-2 rounded focus:outline-none focus:ring-1 focus:ring-primary" id="street-addr" type="text" value="Plot 42, Outer Ring Road, Devarabisanahalli"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1" for="city-val">City</label>
+<input class="w-full bg-surface-container-high/60 text-on-surface font-body-md text-body-md px-space-md py-2 rounded cursor-not-allowed" id="city-val" readonly="" type="text" value="Bengaluru"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1" for="zip-val">Postal Code</label>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md px-space-md py-2 rounded focus:outline-none focus:ring-1 focus:ring-primary" id="zip-val" type="text" value="560103"/>
+</div>
+<div class="sm:col-span-2">
+<label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1" for="dock-val">Floor / Gate / Loading Dock</label>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md px-space-md py-2 rounded focus:outline-none focus:ring-1 focus:ring-primary" id="dock-val" type="text" value="Sub-Level B2, Freight Bay 04, Service Lift Access"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Date & Time Logistics -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-8 h-8 rounded bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">event_available</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Pickup Date &amp; Slot Window</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Calibrated fleet dispatch occurs within your reserved window</p>
+</div>
+</div>
+<!-- Date Selector Row -->
+<div class="mb-space-md">
+<label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1.5" for="date-input">Collection Date</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-space-md text-[20px] text-primary pointer-events-none">calendar_month</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md pl-11 pr-space-md py-2.5 rounded focus:outline-none focus:ring-1 focus:ring-primary" id="date-input" type="text" value="Thursday, Oct 24, 2024"/>
+<div class="absolute right-space-sm flex items-center gap-1">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-2 py-0.5 rounded">Guaranteed Dispatch</span>
+</div>
+</div>
+</div>
+<!-- Time Slot Selection Chips -->
+<div>
+<label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-2">Available Time Windows</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm" id="time-slot-group">
+<!-- Slot 1 -->
+<label class="flex items-center justify-between p-space-md rounded bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all">
+<div class="flex items-center gap-space-sm">
+<input class="text-primary focus:ring-primary h-4 w-4" name="pickup_slot" type="radio"/>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">09:00 AM - 11:00 AM</span>
+<span class="font-body-sm text-body-sm text-outline">Morning Peak Hub Slot</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">wb_sunny</span>
+</label>
+<!-- Slot 2 (Recommended / Active) -->
+<label class="flex items-center justify-between p-space-md rounded bg-surface-container-highest cursor-pointer shadow-sm">
+<div class="flex items-center gap-space-sm">
+<input checked="" class="text-primary focus:ring-primary h-4 w-4" name="pickup_slot" type="radio"/>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold">11:00 AM - 01:00 PM</span>
+</div>
+<span class="font-body-sm text-body-sm text-primary font-medium">Recommended for Tech Park</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-1.5 py-0.5 rounded">Fastest</span>
+</label>
+<!-- Slot 3 -->
+<label class="flex items-center justify-between p-space-md rounded bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all">
+<div class="flex items-center gap-space-sm">
+<input class="text-primary focus:ring-primary h-4 w-4" name="pickup_slot" type="radio"/>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">02:00 PM - 04:00 PM</span>
+<span class="font-body-sm text-body-sm text-outline">Post-Noon Freight Bay</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">schedule</span>
+</label>
+<!-- Slot 4 -->
+<label class="flex items-center justify-between p-space-md rounded bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all">
+<div class="flex items-center gap-space-sm">
+<input class="text-primary focus:ring-primary h-4 w-4" name="pickup_slot" type="radio"/>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">04:00 PM - 06:00 PM</span>
+<span class="font-body-sm text-body-sm text-outline">Evening Consolidation</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">bedtime</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Section: On-Site Contact & Specific Access Directives -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm mb-space-md">
+<div class="w-8 h-8 rounded bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">On-Site Logistics Representative</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">The collector will call this individual upon arrival at the gate</p>
+</div>
+</div>
+<div class="space-y-space-md">
+<div>
+<label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider mb-1" for="contact-input">Point of Contact &amp; Mobile</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-[18px] text-outline">person</span>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md pl-10 pr-space-md py-2 rounded focus:outline-none focus:ring-1 focus:ring-primary" id="contact-input" type="text" value="Elena Vance (+91 98765 43210)"/>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="block font-label-sm text-label-sm text-outline uppercase tracking-wider" for="notes-area">Special Gate Clearance &amp; Handling Instructions</label>
+<span class="font-body-sm text-body-sm text-outline">Max 300 characters</span>
+</div>
+<textarea class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md p-space-md rounded focus:outline-none focus:ring-1 focus:ring-primary resize-none" id="notes-area" rows="3">Security clearance required at Gate 2. Elevator accessible for bulk trolleys.</textarea>
+<div class="flex items-center gap-space-xs mt-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">info</span>
+<span class="font-body-sm text-body-sm">Collector vehicle is pre-equipped with hydraulic pallet jack and precision floor scale.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary & Live Valuation Preview Card (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Main Valuation Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md sticky top-20">
+<!-- Card Header -->
+<div class="flex items-center justify-between pb-space-md mb-space-md bg-surface-container-low -mx-space-lg -mt-space-lg p-space-lg rounded-t-xl">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Valuation Audit</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Order Summary</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+</div>
+</div>
+<!-- Manifest Breakdown List -->
+<div class="space-y-space-md mb-space-lg">
+<div class="flex items-start justify-between">
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">Copper Wire (Clean Scrap)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Grade 1 Heavy Bare • Approx. 15.0 kg</div>
+</div>
+<div class="text-right">
+<div class="font-label-md text-label-md text-on-surface font-semibold">₹7,200</div>
+<div class="font-body-sm text-body-sm text-outline">@ ₹480/kg benchmark</div>
+</div>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<div class="font-label-md text-label-md text-on-surface font-bold">Aluminium Cast &amp; Extrusion</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Tense Grade Scrap • Approx. 20.0 kg</div>
+</div>
+<div class="text-right">
+<div class="font-label-md text-label-md text-on-surface font-semibold">₹2,900</div>
+<div class="font-body-sm text-body-sm text-outline">@ ₹145/kg benchmark</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium">Aggregate Material Mass</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">35.0 kg</span>
+</div>
+</div>
+<!-- Total Valuation Metric Banner -->
+<div class="bg-secondary-container/40 p-space-md rounded-xl mb-space-md">
+<div class="flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block font-semibold">Estimated Payout Range</span>
+<span class="font-metric-num text-metric-num text-primary font-bold">₹8,400 - ₹9,200</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-lowest px-2 py-1 rounded text-primary font-semibold shadow-sm">Instant NEFT</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary h-full rounded-full w-4/5"></div>
+</div>
+<div class="flex justify-between items-center mt-1 text-on-surface-variant">
+<span class="font-body-sm text-body-sm">Indicative Floor: ₹8,400</span>
+<span class="font-body-sm text-body-sm">Ceiling: ₹9,200</span>
+</div>
+</div>
+<!-- Verification Guarantee Box -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex gap-space-sm items-start mb-space-md">
+<span class="material-symbols-outlined text-[20px] text-primary flex-shrink-0 mt-0.5">verified</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Recyvora Verified Collector Guarantee</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Assigned operator carries government-calibrated digital trade scales with dual-screen verification.</p>
+</div>
+</div>
+<!-- Disclaimer Callout -->
+<div class="bg-surface-container p-space-md rounded-lg flex gap-space-sm items-start">
+<span class="material-symbols-outlined text-[18px] text-outline flex-shrink-0 mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Final value will be determined by verified on-site digital scale weight and material grade verification by our certified collector.
+            </p>
+</div>
+<!-- Pickup Route Preview Mini Card -->
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px] text-secondary">alt_route</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface font-semibold">Assigned Route: East Zone 4</p>
+<p class="font-body-sm text-body-sm text-outline">Collector: Ravi Kumar (ID: RC-8842)</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">ETA 24m</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar & Workflow Actions -->
+<div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-2.5 rounded bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back to Details</span>
+</button>
+<button class="hidden sm:inline-flex items-center gap-space-xs px-space-md py-2.5 text-on-surface-variant hover:text-on-surface font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Save as Draft</span>
+</button>
+</div>
+<div class="flex items-center gap-space-md w-full sm:w-auto justify-end">
+<div class="hidden md:flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-outline uppercase">Next Milestone</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Step 4: Valuation &amp; Final Review</span>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-3 rounded bg-primary-container text-on-primary font-label-md text-label-md shadow-md hover:bg-primary transition-all font-semibold" type="button">
+<span>Proceed to Valuation &amp; Review</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

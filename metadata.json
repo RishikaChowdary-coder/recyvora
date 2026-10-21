@@ -1,0 +1,6 @@
+{
+  "name": "Recyvora",
+  "description": "Intelligent circular economy platform for doorstep scrap collection, transparent commodity valuation, compliant e-waste handling, and reusable asset recommerce.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

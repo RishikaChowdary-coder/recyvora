@@ -1,0 +1,1347 @@
+# RECYVORA — COMPLETE BUSINESS APPLICATION DEVELOPMENT SPECIFICATION
+
+## 1. ROLE AND OBJECTIVE
+
+Act as a senior full-stack software architect, React and TypeScript engineer, backend developer, database architect, AI engineer, product designer, and application security specialist.
+
+Build a professional, responsive, functional web application named Recyvora.
+
+Recyvora is an integrated recycling, scrap collection, e-waste management, and reusable-products marketplace platform.
+
+The application must support household customers, business customers, scrap collectors, recycling partners, and administrators.
+
+The goal is to transform the product specification into a working application suitable for:
+
+* Product demonstrations.
+* Business presentations.
+* Startup validation.
+* Realistic user testing.
+* Future production deployment.
+
+Do not create only a landing page.
+
+Do not deliver only a frontend mockup.
+
+Implement the application architecture, pages, workflows, data models, API integration, validation, authentication, and AI features appropriate to the supported development environment.
+
+If a feature requires external credentials, implement the integration safely and document the required configuration.
+
+Never claim that an unimplemented feature is working.
+
+---
+
+## 2. PRODUCT IDENTITY
+
+Product name: Recyvora.
+
+Tagline: Recycle Smart. Reuse More. Build a Greener Tomorrow.
+
+Brand positioning:
+
+Recyvora is a digital circular-economy platform that connects material collection, transparent scrap valuation, responsible e-waste handling, and reusable-product transactions.
+
+Core value proposition:
+
+"One platform to collect responsibly, understand material value, and extend the life of reusable products."
+
+The application should communicate:
+
+* Trust.
+* Transparency.
+* Sustainability.
+* Operational efficiency.
+* Commercial usefulness.
+* Reliable information.
+* Responsible technology.
+
+Use professional business terminology throughout the interface.
+
+Avoid overly casual copy, excessive emojis, generic AI-generated content, and unnecessary decorative elements.
+
+---
+
+## 3. IMPLEMENTATION RULES
+
+Before implementing:
+
+1. Inspect the available development environment.
+2. Identify the existing project structure.
+3. Preserve existing working code where practical.
+4. Reuse any supplied Recyvora design references.
+5. Identify supported frameworks and integrations.
+6. Establish the design system and application architecture.
+
+If a reference design or Stitch-generated interface is available, use it as the primary visual reference.
+
+Reproduce its layout, spacing, colors, typography, navigation, and component hierarchy as closely as the environment allows.
+
+Do not replace the requested design with an unrelated generic dashboard.
+
+If no design reference is available, use the design system defined below.
+
+Implement incrementally and ensure that each stage remains runnable.
+
+Do not stop after generating a plan or project outline.
+
+---
+
+## 4. TECHNOLOGY ARCHITECTURE
+
+Use the following preferred architecture when supported by the environment.
+
+FRONTEND:
+
+* React.
+* TypeScript.
+* Vite.
+* Tailwind CSS.
+* React Router.
+* Lucide React.
+* React Hook Form.
+* Zod.
+* Recharts.
+* Framer Motion for subtle animations.
+
+BACKEND:
+
+* Node.js.
+* Express.
+* TypeScript.
+* REST APIs.
+* Input validation.
+* Authentication middleware.
+* Role-based authorization.
+* Centralized error handling.
+
+DATABASE:
+
+* MongoDB Atlas.
+* Mongoose.
+* Structured schemas.
+* Appropriate indexes.
+* Timestamps.
+* Validation.
+* Pagination.
+
+AI:
+
+* Google Gemini API.
+* Official supported Google Gen AI SDK.
+* Server-side API integration.
+* Environment-based model configuration.
+
+FILE STORAGE:
+
+* A supported object-storage service for uploaded images and collection evidence.
+* File-type validation.
+* File-size limits.
+* Secure upload handling.
+
+DEPLOYMENT:
+
+* Frontend deployable to Vercel or an equivalent supported platform.
+* Backend deployable to Render or another suitable Node.js host.
+* Database hosted through MongoDB Atlas.
+
+IMPORTANT ARCHITECTURE RULE:
+
+If the environment is optimized for a different full-stack architecture, adapt to its supported framework rather than introducing incompatible infrastructure.
+
+Maintain clear separation between presentation, business logic, persistence, and external integrations.
+
+If a backend or database cannot be configured in the current environment, create a clear development adapter with sample data and an explicit indication that persistent storage is not connected.
+
+Never describe browser-only demo data as database-backed production functionality.
+
+---
+
+## 5. PROFESSIONAL DESIGN SYSTEM
+
+Create a refined enterprise sustainability interface.
+
+COLOR TOKENS:
+
+Primary green: #176B50
+Deep evergreen: #104638
+Accent green: #2DA477
+Soft mint: #EAF5EF
+Page background: #F7F9F8
+Card background: #FFFFFF
+Primary text: #182824
+Secondary text: #687770
+Border: #E2E9E5
+Success: #21865B
+Warning: #D99522
+Error: #D9534F
+Information: #3478C6
+
+TYPOGRAPHY:
+
+Use Inter as the primary font.
+
+Use Poppins for selected headings if appropriate.
+
+LAYOUT:
+
+* Professional SaaS sidebar.
+* Consistent top navigation.
+* Spacious content area.
+* Strong page headings.
+* Compact, informative KPI cards.
+* Clean charts.
+* Professional data tables.
+* Restrained shadows.
+* Subtle borders.
+* Consistent spacing.
+* Responsive forms.
+* Clear status badges.
+
+COMPONENT DESIGN:
+
+* Rounded cards with moderate corner radii.
+* Consistent button sizes.
+* Clear primary and secondary actions.
+* Readable form labels.
+* Appropriate empty states.
+* Visible focus indicators.
+* Accessible contrast.
+* Clear loading and error states.
+
+Avoid:
+
+* Excessive gradients.
+* Large decorative circles.
+* Random card colors.
+* Unnecessary animation.
+* Overly rounded interfaces.
+* Oversized headings.
+* Excessive white space that reduces operational usefulness.
+* Fake real-time indicators.
+* Fake testimonials and trust badges.
+
+The final interface must look like a professional sustainability SaaS product.
+
+---
+
+## 6. APPLICATION ROUTES
+
+Implement a clear routing structure.
+
+PUBLIC ROUTES:
+
+/
+Landing page.
+
+/solutions
+Platform solutions.
+
+/marketplace
+Browse reusable products.
+
+/marketplace/:id
+Product details.
+
+/login
+Sign in.
+
+/register
+Create account.
+
+/forgot-password
+Password recovery.
+
+/reset-password
+Reset password.
+
+AUTHENTICATED ROUTES:
+
+/app
+User dashboard.
+
+/app/pickups
+Pickup management.
+
+/app/pickups/new
+Create pickup request.
+
+/app/pickups/:id
+Pickup details and tracking.
+
+/app/ewaste
+E-waste requests.
+
+/app/ewaste/new
+Create e-waste request.
+
+/app/estimator
+Scrap price estimator.
+
+/app/listings
+Manage seller listings.
+
+/app/listings/new
+Create product listing.
+
+/app/orders
+Order requests.
+
+/app/impact
+Environmental impact.
+
+/app/ecoguide
+AI assistant.
+
+/app/notifications
+Notifications.
+
+/app/profile
+Profile.
+
+/app/settings
+Settings.
+
+BUSINESS ROUTES:
+
+/business
+Business overview.
+
+/business/locations
+Manage collection locations.
+
+/business/recurring
+Recurring collection schedules.
+
+/business/reports
+Business reports.
+
+COLLECTOR ROUTES:
+
+/collector
+Collector overview.
+
+/collector/jobs
+Available and assigned jobs.
+
+/collector/jobs/:id
+Job details.
+
+/collector/history
+Completed collections.
+
+RECYCLING PARTNER ROUTES:
+
+/partner
+Partner dashboard.
+
+/partner/ewaste
+Assigned e-waste requests.
+
+/partner/processing/:id
+Processing details.
+
+ADMIN ROUTES:
+
+/admin
+Administrator overview.
+
+/admin/users
+User management.
+
+/admin/pickups
+Pickup management.
+
+/admin/ewaste
+E-waste management.
+
+/admin/listings
+Marketplace moderation.
+
+/admin/pricing
+Material pricing.
+
+/admin/partners
+Partner management.
+
+/admin/analytics
+Platform analytics.
+
+/admin/audit-logs
+Audit logs.
+
+Protect routes according to role and permissions.
+
+Do not rely on frontend route protection alone for backend security.
+
+---
+
+## 7. LANDING PAGE
+
+Create a professional public website.
+
+HEADER:
+
+* Recyvora logo.
+* Home.
+* Solutions.
+* Marketplace.
+* How It Works.
+* Environmental Impact.
+* Sign In.
+* Get Started.
+
+HERO:
+
+Headline:
+
+"Turn Waste Into Value. Build a Circular Future."
+
+Description:
+
+"Manage recyclable materials, schedule doorstep collections, estimate scrap value, and give reusable products a second life through one intelligent platform."
+
+Primary CTA: Schedule a Pickup.
+
+Secondary CTA: Explore Marketplace.
+
+Use professional imagery related to recycling logistics, reusable goods, and responsible electronic-waste collection.
+
+SERVICES:
+
+1. Scrap Collection.
+2. E-Waste Management.
+3. Scrap Price Estimator.
+4. Reusable Products Marketplace.
+
+HOW IT WORKS:
+
+1. Select a service.
+2. Enter item or material details.
+3. Submit a request or publish a listing.
+4. Track the process.
+
+BUSINESS SOLUTIONS:
+
+Explain bulk pickups, multiple locations, recurring scheduling, and reporting.
+
+MARKETPLACE PREVIEW:
+
+Fetch products from the configured backend.
+
+Display an appropriate empty state if no listings exist.
+
+ENVIRONMENTAL IMPACT:
+
+Use verified database records when available.
+
+Label demonstration figures clearly.
+
+FINAL CTA:
+
+"Make Every Material Count."
+
+Footer links:
+
+* About.
+* Solutions.
+* Marketplace.
+* Contact.
+* FAQs.
+* Privacy.
+* Terms.
+
+All buttons must navigate to meaningful destinations or trigger a defined action.
+
+---
+
+## 8. AUTHENTICATION AND ROLE MANAGEMENT
+
+Implement registration, login, logout, password recovery, and profile management.
+
+Supported roles:
+
+* Household.
+* Business.
+* Collector.
+* Recycling Partner.
+* Administrator.
+
+Use secure password hashing.
+
+Validate all input.
+
+Use secure session handling or an appropriately implemented token strategy.
+
+Do not store plaintext passwords.
+
+Do not expose authentication secrets to frontend code.
+
+Implement:
+
+* Protected routes.
+* Session validation.
+* Role-specific dashboards.
+* Role-based API authorization.
+* Account status checks.
+* Password reset flow.
+* Email verification where a delivery provider is configured.
+* Account deactivation or deletion workflow.
+
+Public registration must not allow arbitrary users to grant themselves administrator privileges.
+
+Administrative roles must be assigned through a controlled, authorized process.
+
+Provide a development seed strategy for demo users without hardcoding production credentials.
+
+---
+
+## 9. USER DASHBOARD
+
+Create a polished SaaS dashboard.
+
+HEADER:
+
+Title: Overview.
+
+Supporting text: "Your recycling activity, collection requests, and material value in one place."
+
+KPI CARDS:
+
+* Total Pickups.
+* Completed Collections.
+* Estimated Material Value.
+* Verified Material Collected.
+
+ANALYTICS:
+
+* Collection activity over time.
+* Material category distribution.
+* Recent pickup history.
+* Upcoming collection.
+* Environmental impact summary.
+
+QUICK ACTIONS:
+
+* Schedule Pickup.
+* Request E-Waste Collection.
+* Estimate Scrap Value.
+* List a Reusable Product.
+
+Use data from authorized backend records.
+
+Do not hardcode dashboard totals.
+
+If no records exist, show zero values or an informative empty state.
+
+Support:
+
+* Loading skeletons.
+* Error messages.
+* Retry actions.
+* Date filters where appropriate.
+* Responsive chart layouts.
+
+---
+
+## 10. SCRAP PICKUP WORKFLOW
+
+Implement a complete multi-step booking process.
+
+STEP 1: MATERIAL
+
+Supported initial categories:
+
+* Paper and Cardboard.
+* Plastic.
+* Iron and Steel.
+* Aluminium.
+* Copper.
+* Other Accepted Materials.
+
+STEP 2: MATERIAL DETAILS
+
+Collect:
+
+* Category.
+* Estimated quantity.
+* Unit.
+* Condition.
+* Optional photograph.
+* Additional instructions.
+
+STEP 3: SCHEDULE
+
+Collect:
+
+* Pickup address.
+* City.
+* Postal code.
+* Preferred date.
+* Available time slot.
+* Contact details.
+
+STEP 4: ESTIMATE
+
+Retrieve configured pricing from the backend.
+
+Calculate:
+
+Estimated Value = Estimated Quantity × Configured Indicative Rate.
+
+Do not invent live rates.
+
+If pricing is unavailable, explain that the estimate cannot currently be calculated.
+
+STEP 5: REVIEW AND SUBMIT
+
+Display a complete review summary.
+
+On submission:
+
+* Validate input.
+* Save the request.
+* Generate a unique request identifier.
+* Assign the initial status.
+* Record creation timestamps.
+* Display a confirmation page.
+* Allow the user to view the request.
+
+INITIAL STATUS:
+
+Requested.
+
+SUPPORTED STATUS LIFECYCLE:
+
+Requested → Confirmed → Collector Assigned → In Progress → Completed.
+
+Cancellation must follow configured business rules.
+
+Rescheduling must validate availability and current status.
+
+Record status history with timestamps and the responsible actor.
+
+Distinguish estimated quantity from verified final weight.
+
+---
+
+## 11. E-WASTE MANAGEMENT
+
+Create a separate workflow for electronic-waste requests.
+
+Supported configurable categories:
+
+* Mobile Phones.
+* Laptops.
+* Desktop Computers.
+* Tablets.
+* Chargers and Cables.
+* Printers.
+* Small Electronic Appliances.
+* Other Supported Electronics.
+
+Request fields:
+
+* Item category.
+* Brand and model, if applicable.
+* Quantity.
+* Condition.
+* Approximate weight.
+* Photographs.
+* Pickup location.
+* Preferred schedule.
+* Additional instructions.
+
+Display a device data-safety reminder.
+
+Do not guarantee data destruction unless a verified service explicitly provides it.
+
+Allow administrators to configure accepted and restricted categories.
+
+STATUS LIFECYCLE:
+
+Requested → Confirmed → Collection Scheduled → Collected → Processing → Completed.
+
+Provide request details and status tracking.
+
+Keep e-waste processing records separate from ordinary scrap collection.
+
+Only authorized recycling partners should access their assigned processing records.
+
+---
+
+## 12. SCRAP PRICE ESTIMATION
+
+Create an administrator-managed material pricing system.
+
+Each pricing record should contain:
+
+* Material category.
+* Unit.
+* Indicative rate.
+* Quality or grade, where applicable.
+* Currency.
+* Effective date.
+* Last updated timestamp.
+* Active status.
+* Source or administrative note.
+
+Create a user interface where customers can:
+
+1. Select a material.
+2. Enter quantity.
+3. Select a supported unit.
+4. Choose a condition or grade when configured.
+5. View the indicative rate.
+6. Calculate estimated value.
+7. Review the calculation.
+
+Example using illustrative data:
+
+Quantity: 5 kg.
+Rate: ₹20/kg.
+Estimated value: ₹100.
+
+Label example values as illustrative until valid local prices are configured.
+
+Do not claim access to real-time prices without a verified pricing source.
+
+Restrict pricing administration to authorized administrators.
+
+Maintain a record of pricing updates.
+
+---
+
+## 13. REUSABLE PRODUCTS MARKETPLACE
+
+Create a functional recommerce marketplace.
+
+CATEGORIES:
+
+* Electronics.
+* Furniture.
+* Home and Kitchen.
+* Books.
+* Clothing.
+* Appliances.
+* Office Equipment.
+* Other Reusable Goods.
+
+Implement:
+
+* Product search.
+* Category filtering.
+* Price filtering.
+* Condition filtering.
+* Location filtering.
+* Sorting.
+* Pagination.
+* Product details.
+* Seller profiles.
+* Favorites.
+* Seller inquiries.
+* Listing management.
+* Listing reports.
+* Order requests.
+
+PRODUCT LISTING FIELDS:
+
+* Title.
+* Description.
+* Category.
+* Price.
+* Condition.
+* Images.
+* Approximate location.
+* Pickup or delivery preference.
+* Seller reference.
+* Listing status.
+* Timestamps.
+
+LISTING STATUSES:
+
+Draft, Active, Reserved, Sold, Removed.
+
+SELLER ACTIONS:
+
+* Create listing.
+* Edit listing.
+* Upload images.
+* Preview listing.
+* Publish listing.
+* Deactivate listing.
+* Manage inquiries.
+* Mark as sold.
+
+Implement server-side ownership checks.
+
+Users may modify only their own listings unless authorized administrative permissions apply.
+
+Prevent unavailable products from being purchased.
+
+Use safe, atomic updates or appropriate transaction handling to prevent duplicate sales.
+
+For the initial version, implement purchase requests rather than pretending that online payments have succeeded.
+
+If payment integration is not configured, clearly state that payment processing is not available.
+
+---
+
+## 14. BUSINESS WORKSPACE
+
+Implement a dedicated business dashboard.
+
+FEATURES:
+
+* Bulk collection requests.
+* Multiple collection locations.
+* Recurring scheduling.
+* Collection history.
+* Material category breakdown.
+* Verified material quantities.
+* Indicative material valuation.
+* Downloadable reports.
+* Environmental impact summary.
+
+Allow business users to filter data by:
+
+* Date range.
+* Location.
+* Material category.
+* Collection status.
+
+Use authorization checks to ensure that users can access only their own organization's records.
+
+Reports should distinguish:
+
+* Requested quantities.
+* Verified collected quantities.
+* Indicative values.
+* Completed transactions.
+* Estimated environmental indicators.
+
+Do not represent estimates as certified sustainability results.
+
+---
+
+## 15. COLLECTOR WORKSPACE
+
+Implement a separate collector dashboard.
+
+SUMMARY:
+
+* Available Jobs.
+* Assigned Jobs.
+* Completed Jobs.
+* Earnings Summary.
+
+FEATURES:
+
+* View eligible jobs.
+* Accept or decline jobs.
+* View assigned pickup details.
+* Update permitted status transitions.
+* Enter verified material weight.
+* Record final valuation.
+* Upload collection evidence.
+* View job history.
+
+ENFORCE:
+
+* Only eligible collectors can accept assignments.
+* Prevent conflicting assignments.
+* Restrict status updates to authorized users.
+* Record the actor and timestamp for important updates.
+* Protect customer addresses and contact details before valid assignment.
+
+Distinguish estimates from verified results.
+
+---
+
+## 16. RECYCLING PARTNER WORKSPACE
+
+Provide authorized recycling partners with:
+
+* Assigned e-waste requests.
+* Received item records.
+* Processing status.
+* Processing notes.
+* Authorized evidence uploads.
+* Completion records.
+* Processing history.
+
+Do not allow partners to modify unrelated requests.
+
+Record important processing events and timestamps.
+
+---
+
+## 17. ADMINISTRATOR CONSOLE
+
+Implement a role-protected administration interface.
+
+DASHBOARD:
+
+* Registered Users.
+* Pickup Requests.
+* Completed Collections.
+* Pending E-Waste Requests.
+* Active Listings.
+* Collector and Partner Overview.
+
+MODULES:
+
+* User Management.
+* Pickup Management.
+* E-Waste Management.
+* Collector Verification.
+* Recycling Partner Management.
+* Material Price Management.
+* Marketplace Moderation.
+* Order Management.
+* Dispute Management.
+* Analytics.
+* Audit Logs.
+
+Provide:
+
+* Search.
+* Filtering.
+* Sorting.
+* Pagination.
+* Confirmation dialogs.
+* Clear success and error messages.
+
+Restrict all administrative actions on the server.
+
+Log important changes, including pricing updates, role changes, suspensions, and sensitive record modifications.
+
+---
+
+## 18. GEMINI AI — RECYVORA ECOGUIDE
+
+Implement an AI assistant called Recyvora EcoGuide.
+
+Use the supported Google Gemini API through a backend service.
+
+Keep the API key on the server.
+
+Configure the model through an environment variable.
+
+Do not expose the key in frontend JavaScript or public application configuration.
+
+AI CAPABILITIES:
+
+* Explain common recycling practices.
+* Help users understand material categories.
+* Explain how to prepare recyclable items.
+* Provide general e-waste preparation guidance.
+* Explain platform workflows.
+* Explain how indicative scrap value is calculated.
+* Help users navigate the marketplace.
+* Suggest suitable platform services.
+
+CHAT INTERFACE:
+
+* Conversation history.
+* Suggested prompts.
+* Message input.
+* Loading state.
+* Retry action.
+* Error handling.
+* Clear formatted responses.
+* Conversation reset.
+
+SYSTEM INSTRUCTIONS FOR ECOGUIDE:
+
+"You are Recyvora EcoGuide, the responsible recycling and circular-economy assistant for the Recyvora platform.
+
+Provide clear, practical, professional, and safety-conscious guidance.
+
+Distinguish general educational guidance from confirmed information about Recyvora services.
+
+Never invent live scrap prices, collector availability, order status, partner certifications, or processing records.
+
+When discussing actual user requests, use authorized backend information rather than assuming facts.
+
+When pricing information is available, explain calculations using the configured rates.
+
+When pricing information is unavailable, state that the value cannot currently be verified.
+
+Do not declare hazardous materials safe based on a description or image alone.
+
+For damaged, leaking, or potentially hazardous electronic equipment, recommend appropriate qualified handling.
+
+Treat material identification and environmental calculations as estimates when they have not been verified.
+
+Do not perform privileged operations merely because a user asks through the chat interface.
+
+Never request passwords, API keys, or unnecessary sensitive personal information."
+
+AI REQUEST HANDLING:
+
+* Validate message length.
+* Apply reasonable rate limits.
+* Handle unavailable models and API errors.
+* Avoid exposing server error details.
+* Display useful retry messages.
+* Do not fabricate successful responses if the AI service fails.
+
+If image-based assistance is supported, treat its output as a suggestion and require user confirmation.
+
+---
+
+## 19. ENVIRONMENTAL IMPACT ANALYTICS
+
+Implement an impact dashboard using verified platform records.
+
+Show:
+
+* Verified recyclable material weight.
+* Completed pickups.
+* Reusable products sold.
+* Material category breakdown.
+* Monthly activity.
+* Estimated landfill diversion.
+* Estimated CO2-equivalent emissions avoided.
+
+Use configurable calculation factors and record their source and version.
+
+Label calculated environmental metrics as estimates.
+
+Do not claim certified environmental impact without a validated methodology.
+
+Use only authorized, relevant records for individual and business dashboards.
+
+---
+
+## 20. NOTIFICATIONS
+
+Implement in-app notifications for:
+
+* Pickup confirmations.
+* Collector assignments.
+* Schedule changes.
+* Collection completion.
+* E-waste processing updates.
+* Product inquiries.
+* Order updates.
+* Listing moderation.
+* Account security events.
+
+Support:
+
+* Read/unread status.
+* Timestamps.
+* Related record links.
+* Unread count.
+* Mark as read.
+
+Only claim that email or SMS notifications were sent when a real provider is configured and the send operation succeeds.
+
+---
+
+## 21. DATABASE DESIGN
+
+Create suitable data models for:
+
+* User.
+* Address.
+* BusinessProfile.
+* ScrapPickup.
+* EWasteRequest.
+* MaterialPrice.
+* MarketplaceListing.
+* Favorite.
+* Inquiry.
+* Order.
+* CollectorProfile.
+* RecyclingPartnerProfile.
+* Notification.
+* ImpactCalculation.
+* AuditLog.
+
+Use:
+
+* Schema validation.
+* Appropriate indexes.
+* Unique identifiers.
+* Timestamps.
+* References.
+* Ownership constraints.
+* Pagination-friendly queries.
+
+Protect sensitive personal information.
+
+Use transactions when necessary and supported.
+
+Do not place API keys or secrets in database seed data.
+
+If a persistent database cannot be configured in the current environment, clearly identify the temporary development storage strategy and provide the appropriate production database integration steps.
+
+---
+
+## 22. API DESIGN
+
+Create a consistent, versioned REST API under /api/v1.
+
+AUTHENTICATION:
+
+POST /api/v1/auth/register
+POST /api/v1/auth/login
+POST /api/v1/auth/logout
+POST /api/v1/auth/forgot-password
+POST /api/v1/auth/reset-password
+GET /api/v1/auth/me
+
+USERS:
+
+GET /api/v1/users/me
+PATCH /api/v1/users/me
+GET /api/v1/users/me/addresses
+POST /api/v1/users/me/addresses
+
+SCRAP:
+
+GET /api/v1/scrap/prices
+POST /api/v1/scrap/estimate
+POST /api/v1/scrap/pickups
+GET /api/v1/scrap/pickups
+GET /api/v1/scrap/pickups/:id
+PATCH /api/v1/scrap/pickups/:id/cancel
+PATCH /api/v1/scrap/pickups/:id/reschedule
+
+E-WASTE:
+
+POST /api/v1/ewaste/requests
+GET /api/v1/ewaste/requests
+GET /api/v1/ewaste/requests/:id
+
+MARKETPLACE:
+
+GET /api/v1/marketplace/listings
+GET /api/v1/marketplace/listings/:id
+POST /api/v1/marketplace/listings
+PATCH /api/v1/marketplace/listings/:id
+DELETE /api/v1/marketplace/listings/:id
+POST /api/v1/marketplace/listings/:id/favorite
+POST /api/v1/marketplace/listings/:id/inquiries
+POST /api/v1/marketplace/listings/:id/report
+
+ORDERS:
+
+POST /api/v1/orders
+GET /api/v1/orders
+GET /api/v1/orders/:id
+PATCH /api/v1/orders/:id/status
+
+COLLECTORS:
+
+GET /api/v1/collector/jobs
+POST /api/v1/collector/jobs/:id/accept
+PATCH /api/v1/collector/jobs/:id/status
+POST /api/v1/collector/jobs/:id/evidence
+
+AI:
+
+POST /api/v1/ai/chat
+POST /api/v1/ai/classify-material
+
+NOTIFICATIONS:
+
+GET /api/v1/notifications
+PATCH /api/v1/notifications/:id/read
+
+ADMIN:
+
+GET /api/v1/admin/analytics
+GET /api/v1/admin/users
+GET /api/v1/admin/pickups
+PATCH /api/v1/admin/pickups/:id/assign
+GET /api/v1/admin/prices
+POST /api/v1/admin/prices
+PATCH /api/v1/admin/prices/:id
+
+Add additional endpoints where needed.
+
+All endpoints must implement appropriate authentication, authorization, validation, ownership checks, and meaningful HTTP status codes.
+
+---
+
+## 23. SECURITY REQUIREMENTS
+
+Implement:
+
+* Secure password hashing.
+* Server-side role authorization.
+* Ownership validation.
+* Input validation.
+* Request-size limits.
+* Appropriate rate limiting.
+* Secure CORS configuration.
+* Security headers.
+* File upload validation.
+* Safe database queries.
+* Protected configuration.
+* Safe error responses.
+* Audit logs.
+* Secure session handling.
+* Appropriate protection against unauthorized object access.
+
+Never commit API keys, passwords, database credentials, or production secrets.
+
+Provide an .env.example file containing placeholder values only.
+
+Do not place private API keys in client-side source code.
+
+---
+
+## 24. USER EXPERIENCE REQUIREMENTS
+
+Every major page must include the appropriate:
+
+* Loading state.
+* Empty state.
+* Error state.
+* Success feedback.
+* Validation message.
+* Disabled state.
+* Confirmation dialog.
+
+Implement responsive layouts for desktop, tablet, and mobile.
+
+Use accessible form labels and visible keyboard focus.
+
+Ensure buttons and navigation links have meaningful actions.
+
+Do not leave primary features as dead buttons.
+
+If a feature is unavailable because a service is not configured, explain its status clearly rather than pretending it succeeded.
+
+---
+
+## 25. IMPLEMENTATION PHASES
+
+PHASE 1 — FOUNDATION
+
+* Inspect the environment.
+* Establish the project structure.
+* Create the design system.
+* Build the responsive landing page.
+* Implement application navigation.
+* Build authentication.
+* Connect the database where supported.
+* Create role-based application shells.
+
+PHASE 2 — CORE OPERATIONS
+
+* Scrap pickup workflow.
+* Price estimator.
+* E-waste workflow.
+* Request details.
+* Pickup tracking.
+
+PHASE 3 — MARKETPLACE
+
+* Marketplace browsing.
+* Search and filters.
+* Product details.
+* Seller listing management.
+* Favorites.
+* Inquiries.
+* Order requests.
+
+PHASE 4 — BUSINESS OPERATIONS
+
+* Business dashboard.
+* Multiple collection locations.
+* Collector dashboard.
+* Recycling partner workflow.
+* Admin console.
+* Notifications.
+
+PHASE 5 — INTELLIGENCE AND ANALYTICS
+
+* Gemini EcoGuide.
+* Environmental impact.
+* Reports.
+* Audit logs.
+* Error handling.
+* Security hardening.
+
+PHASE 6 — VERIFICATION
+
+* Run the application.
+* Resolve build errors.
+* Test primary user journeys.
+* Test permissions.
+* Validate forms.
+* Test database operations.
+* Verify AI error handling.
+* Document remaining configuration requirements.
+
+Do not attempt to implement every complex feature in one uncontrolled step.
+
+Build working modules incrementally and preserve previously working features.
+
+---
+
+## 26. TESTING AND ACCEPTANCE CRITERIA
+
+The application should be considered ready for demonstration only after verifying that:
+
+1. The application builds successfully.
+2. Public pages load correctly.
+3. Authentication works using the configured implementation.
+4. Protected routes enforce role permissions.
+5. Users can submit valid pickup requests.
+6. Pickup requests can be viewed and tracked.
+7. E-waste requests are managed separately.
+8. Estimates use configured rates.
+9. Marketplace listings can be created and displayed.
+10. Users cannot edit another user's listing.
+11. Order requests respect listing availability.
+12. Collectors can manage authorized assignments.
+13. Administrators can manage authorized records.
+14. EcoGuide handles configured Gemini requests.
+15. AI failures display useful messages.
+16. Dashboard values use authorized data.
+17. Loading, empty, success, and error states are implemented.
+18. API keys remain server-side.
+19. Mobile layouts remain usable.
+20. Setup instructions are documented.
+
+If any acceptance criterion cannot be completed, explicitly report the limitation.
+
+---
+
+## 27. FINAL DELIVERY
+
+Deliver a professional Recyvora application with:
+
+* A polished public website.
+* A consistent application design system.
+* Functional core workflows.
+* Role-aware dashboards.
+* A reusable-products marketplace.
+* Scrap valuation.
+* E-waste management.
+* Gemini-powered EcoGuide.
+* Business operations screens.
+* Collector and administrator workspaces.
+* Appropriate backend and database integrations.
+* Clear setup instructions.
+
+At completion, provide:
+
+1. Implemented features.
+2. Features requiring further work.
+3. Required environment variables.
+4. Database setup instructions.
+5. Gemini API configuration instructions.
+6. Development and build commands.
+7. Testing results.
+8. Deployment instructions.
+9. Any remaining integration limitations.
+
+Begin by inspecting the environment and establishing the design system and application foundation. Then implement the core workflows incrementally.
+
+Prioritize a consistent professional interface, reliable business logic, secure integrations, and working end-to-end user journeys over superficial feature counts.

@@ -1,0 +1,246 @@
+---
+name: Ecological Precision
+colors:
+  surface: '#ebfef7'
+  surface-dim: '#ccded8'
+  surface-bright: '#ebfef7'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#e5f8f1'
+  surface-container: '#dff2eb'
+  surface-container-high: '#daece6'
+  surface-container-highest: '#d4e7e0'
+  on-surface: '#0e1e1b'
+  on-surface-variant: '#3f4944'
+  inverse-surface: '#23342f'
+  inverse-on-surface: '#e2f5ee'
+  outline: '#6f7973'
+  outline-variant: '#bec9c2'
+  surface-tint: '#176b50'
+  primary: '#00513b'
+  on-primary: '#ffffff'
+  primary-container: '#176b50'
+  on-primary-container: '#9be9c6'
+  inverse-primary: '#89d6b5'
+  secondary: '#366758'
+  on-secondary: '#ffffff'
+  secondary-container: '#b6ebd7'
+  on-secondary-container: '#3a6c5c'
+  tertiary: '#005137'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#006c4a'
+  on-tertiary-container: '#7eedbb'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#a4f3d0'
+  primary-fixed-dim: '#89d6b5'
+  on-primary-fixed: '#002116'
+  on-primary-fixed-variant: '#00513b'
+  secondary-fixed: '#b9eeda'
+  secondary-fixed-dim: '#9dd1be'
+  on-secondary-fixed: '#002118'
+  on-secondary-fixed-variant: '#1c4f41'
+  tertiary-fixed: '#88f8c5'
+  tertiary-fixed-dim: '#6bdbaa'
+  on-tertiary-fixed: '#002114'
+  on-tertiary-fixed-variant: '#005137'
+  background: '#ebfef7'
+  on-background: '#0e1e1b'
+  surface-variant: '#d4e7e0'
+typography:
+  headline-xl:
+    fontFamily: Inter
+    fontSize: 40px
+    fontWeight: '600'
+    lineHeight: 48px
+    letterSpacing: -0.02em
+  headline-xl-mobile:
+    fontFamily: Inter
+    fontSize: 30px
+    fontWeight: '600'
+    lineHeight: 38px
+    letterSpacing: -0.015em
+  headline-lg:
+    fontFamily: Inter
+    fontSize: 32px
+    fontWeight: '600'
+    lineHeight: 40px
+    letterSpacing: -0.015em
+  headline-lg-mobile:
+    fontFamily: Inter
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 32px
+    letterSpacing: -0.01em
+  headline-md:
+    fontFamily: Inter
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 32px
+    letterSpacing: -0.01em
+  headline-sm:
+    fontFamily: Inter
+    fontSize: 18px
+    fontWeight: '600'
+    lineHeight: 26px
+    letterSpacing: -0.005em
+  body-lg:
+    fontFamily: Inter
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 24px
+    letterSpacing: -0.005em
+  body-md:
+    fontFamily: Inter
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 20px
+    letterSpacing: 0em
+  body-sm:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: '400'
+    lineHeight: 16px
+    letterSpacing: 0em
+  label-md:
+    fontFamily: Inter
+    fontSize: 13px
+    fontWeight: '500'
+    lineHeight: 16px
+    letterSpacing: 0.01em
+  label-sm:
+    fontFamily: Inter
+    fontSize: 11px
+    fontWeight: '600'
+    lineHeight: 14px
+    letterSpacing: 0.04em
+  metric-num:
+    fontFamily: Inter
+    fontSize: 28px
+    fontWeight: '600'
+    lineHeight: 32px
+    letterSpacing: -0.02em
+rounded:
+  sm: 0.125rem
+  DEFAULT: 0.25rem
+  md: 0.375rem
+  lg: 0.5rem
+  xl: 0.75rem
+  full: 9999px
+spacing:
+  gutter: 1rem
+  gutter-lg: 1.5rem
+  margin: 1rem
+  margin-md: 1.5rem
+  margin-lg: 2rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 0.75rem
+  space-lg: 1.25rem
+  space-xl: 2rem
+---
+
+## Brand & Style
+
+This design system pairs the rigorous, data-dense clarity of modern financial technology with the natural authority of ecological stewardship. Built for enterprise sustainability officers, industrial recyclers, and ESG asset managers, the interface communicates institutional trust, analytical precision, and purposeful climate impact.
+
+The visual aesthetic sits at the intersection of high-density enterprise SaaS and structural minimalism:
+- **Restraint Over Decoration:** White space is deliberate, structured, and active. Meaningful data is prioritized over decorative motifs.
+- **Micro-Metric Legibility:** Numerical readouts, audit chains, and mass flow tracking require exact spatial anchoring and hairline grid alignments.
+- **Institutional Weight:** Deep evergreen tones establish gravitas, avoiding typical "green-washed" neon shades in favor of structured forest hues and crisp slate neutrals.
+
+## Colors
+
+The palette is engineered for prolonged data analysis without eye fatigue, balancing high-contrast typography with soft, low-chroma structural surfaces.
+
+### Semantic Mapping
+- **Primary (`#176B50`):** Brand anchor. Used for primary calls to action, active navigation states, selected tab indicators, and progress metric completions.
+- **Secondary (`#104638`):** Deep evergreen foundation. Reserved for high-priority interactive components, persistent sidebars, and critical enterprise status panels.
+- **Tertiary (`#2DA477`):** Accent green. Applied to positive trend vectors, interactive micro-highlights, and secondary focal elements.
+- **Neutral Dark (`#182824`):** Primary text and terminal metrics. Ensures WCAG AAA compliance across all container surfaces.
+- **Secondary Text (`#687770`):** Secondary metadata, labels, units of measure, and table headers.
+- **Surface Foundations:**
+  - Canvas / Page Background: `#F7F9F8`
+  - Container / Card Background: `#FFFFFF`
+  - Muted Inset / Table Track Background: `#F0F4F1`
+  - Subtle Structural Borders: `#E2E9E5`
+  - Tinted Highlights: `#EAF5EF`
+- **Feedback & Validation:**
+  - Success: `#21865B`
+  - Warning: `#D99522`
+  - Error: `#D9534F`
+  - Info: `#3478C6`
+
+## Typography
+
+Typography is deployed with typographic density and systematic vertical alignment. Inter provides neutral, unadorned geometry, optimized for mixed numerical and alphanumeric presentation.
+
+- **Tabular Figures:** Always apply `font-feature-settings: "tnum" 1` to financial data, material tonnages, lifecycle scores, and status tables to ensure strict columnar tracking.
+- **Hierarchy Rules:**
+  - `metric-num` is paired directly with `label-sm` (uppercase) for metric cards and KPI dashboards.
+  - Headings avoid purely decorative sizing; desktop interfaces must remain compact to keep critical analytical tools above the fold.
+  - Subtext and secondary labels rely on `#687770` rather than diminished font sizes, maintaining legibility across data grids.
+
+## Layout & Spacing
+
+The structural layout utilizes a high-density 12-column grid system paired with strict 4px base increments for internal element spacing.
+
+- **Desktop (1200px+):** 12-column fluid grid, `1.5rem` (`gutter-lg`) gutters, `2rem` (`margin-lg`) canvas margins. Sidebars remain persistent at fixed widths (`240px` or `280px`).
+- **Tablet (768px - 1199px):** 8-column layout, `1rem` (`gutter`) gutters, `1.5rem` (`margin-md`) canvas margins. Sidebars collapse to icon-only rails.
+- **Mobile (Below 768px):** 4-column layout, `1rem` (`gutter`) gutters, `1rem` (`margin`) canvas margins. Full-width stacked modules; complex data grids switch to metric summary tiles with drill-down sheets.
+- **Density Rhythms:** Internal padding for data cells, inputs, and list rows prefers compact increments (`0.5rem` to `0.75rem`), reserving larger tokens (`1.25rem` to `2rem`) exclusively for macro component boundaries.
+
+## Elevation & Depth
+
+Visual hierarchy avoids heavy drop shadows and dramatic skeuomorphic layering. Instead, depth is structured through **low-contrast hairlines** and **tonal stacking**.
+
+1. **Hairline Outlines:** All cards, modal panels, and segmented controls are delineated by a crisp `1px` border using `#E2E9E5`.
+2. **Surface Tiering:**
+   - **Level 0 (Canvas):** `#F7F9F8` creates a tinted, paper-matte baseline.
+   - **Level 1 (Cards & Data Containers):** Pure `#FFFFFF` surfaces sitting directly atop the canvas, framed by hairlines.
+   - **Level 2 (Active States, Insets, Table Headers):** `#F0F4F1` provides subtle depth without elevation changes.
+3. **Restrained Ambient Shadows:** Shadows are reserved for floating contextual overlays (flyouts, dropdown menus, slide-out panels):
+   - **Overlay Shadow:** `0 4px 16px -2px rgba(16, 70, 56, 0.06), 0 1px 3px 0 rgba(16, 70, 56, 0.04)`
+   - The green-tinted undertone (`rgba(16, 70, 56, *)`) integrates floating elements cleanly into the palette.
+
+## Shapes
+
+This design system uses a controlled **Soft (Level 1)** geometric standard. Crisp corners with micro-radii emphasize architectural precision and enterprise authority, avoiding overly bubbly or consumer-oriented curves.
+
+- **Base Components (Inputs, Buttons, Badges):** `4px` (`rounded-sm`).
+- **Cards & Data Containers:** `8px` (`rounded-lg`).
+- **Modal Dialogs & Slide-overs:** `12px` (`rounded-xl`).
+- **Status Indicators & Avatars:** Fully circular (`rounded-full`) exclusively to signify status states and user profiles.
+
+## Components
+
+### Buttons
+- **Primary:** Solid `#176B50` fill, `#FFFFFF` text, `4px` radius. Hover: `#104638`. Active: subtle inset border with `#104638`. Focus: `2px` offset ring using `#2DA477`.
+- **Secondary / Outlined:** `#FFFFFF` background, `1px` solid `#E2E9E5` border, `#182824` text. Hover: `#F0F4F1` background, `#176B50` border.
+- **Ghost:** Transparent background, `#182824` text. Hover: `#F0F4F1` background.
+- **Metrics / Compact Size:** `32px` height, `0.5rem` horizontal padding, `13px` font size for dense operational bars.
+
+### Chips & Badges
+- **Status Badges:** `1px` solid border, low-saturation tinted background, uppercase `11px` label font.
+  - *Certified / Verified:* `#EAF5EF` background, `#21865B` text, `#21865B` 20% opacity border.
+  - *Under Review / Pending:* `#FFF8EB` background, `#D99522` text, `#D99522` 20% opacity border.
+  - *Non-Compliant:* `#FDF2F2` background, `#D9534F` text, `#D9534F` 20% opacity border.
+- **Filter Chips:** `#FFFFFF` surface, `1px` solid `#E2E9E5`, `#687770` text. Selected state: `#EAF5EF` background, `#176B50` text and border.
+
+### Input Fields & Controls
+- **Text Inputs:** `#FFFFFF` surface, `1px` solid `#E2E9E5`, `4px` radius. Text is `#182824`, placeholder is `#687770`. Height is standard `36px` (or `32px` dense). Focus state: `#176B50` border with a `0 0 0 1px #176B50` ring.
+- **Checkboxes & Radios:** `16px` dimension, `1px` solid `#E2E9E5`, `3px` radius (checkbox) or circular (radio). Checked state: `#176B50` fill with `#FFFFFF` checkmark icon.
+
+### Cards & Container Panels
+- Base surface is `#FFFFFF` with a `1px` solid `#E2E9E5` outline and `8px` corner radius.
+- Card headers feature a distinct bottom border (`1px` solid `#E2E9E5`) with `0.75rem` vertical and `1.25rem` horizontal padding.
+- Metric display cards place `label-sm` above `metric-num`, with trend badges right-aligned.
+
+### Data Tables & Ledger Lists
+- **Header:** `#F0F4F1` surface, `11px` uppercase text (`label-sm`), `#687770`, `1px` bottom border (`#E2E9E5`).
+- **Rows:** Alternating rows remain `#FFFFFF`, transitioning to `#F7F9F8` on hover. Cell borders use `1px` horizontal hairlines. Numbers are always right-aligned with monospace numeric features.
+
+### Circularity Specific: Mass-Balance & Flow Meters
+- **Material Traceability Bars:** `6px` continuous segmented bars with `2px` dividers. Each segment represents material grade (Recycled, Bio-based, Virgin).
+- **Chain of Custody Steppers:** Vertical track with `1px` hairline line in `#E2E9E5`. Node checkpoints utilize `8px` circles: filled `#176B50` for verified stages, outlined `#E2E9E5` for pending transfers.
