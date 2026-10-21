@@ -49,6 +49,17 @@
   --color-on-background: #0e1e1b;
   --color-surface-variant: #d4e7e0;
 
+  --spacing-gutter-lg: 1.5rem;
+  --spacing-margin-md: 1.5rem;
+  --spacing-gutter: 1rem;
+  --spacing-margin: 1rem;
+  --spacing-space-lg: 1.25rem;
+  --spacing-space-md: 0.75rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-margin-lg: 2rem;
+  --spacing-space-xl: 2rem;
+
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
@@ -57,17 +68,140 @@
   html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
-    color: var(--color-on-surface);
-    background-color: var(--color-surface);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #0e1e1b;
+    background-color: #ebfef7;
   }
 }
 
+/* Custom typography classes matching exact design specification */
+.font-headline-xl {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 40px !important;
+  line-height: 48px !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 600 !important;
+}
+.text-headline-xl {
+  font-size: 40px !important;
+  line-height: 48px !important;
+  letter-spacing: -0.02em !important;
+}
+.font-headline-lg {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 32px !important;
+  line-height: 40px !important;
+  letter-spacing: -0.015em !important;
+  font-weight: 600 !important;
+}
+.text-headline-lg {
+  font-size: 32px !important;
+  line-height: 40px !important;
+  letter-spacing: -0.015em !important;
+}
+.font-headline-md {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 24px !important;
+  line-height: 32px !important;
+  letter-spacing: -0.01em !important;
+  font-weight: 600 !important;
+}
+.text-headline-md {
+  font-size: 24px !important;
+  line-height: 32px !important;
+  letter-spacing: -0.01em !important;
+}
+.font-headline-sm {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 18px !important;
+  line-height: 26px !important;
+  letter-spacing: -0.005em !important;
+  font-weight: 600 !important;
+}
+.text-headline-sm {
+  font-size: 18px !important;
+  line-height: 26px !important;
+  letter-spacing: -0.005em !important;
+}
+.font-metric-num {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 28px !important;
+  line-height: 32px !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 600 !important;
+}
+.text-metric-num {
+  font-size: 28px !important;
+  line-height: 32px !important;
+  letter-spacing: -0.02em !important;
+}
+.font-body-lg {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.005em !important;
+  font-weight: 400 !important;
+}
+.text-body-lg {
+  font-size: 16px !important;
+  line-height: 24px !important;
+  letter-spacing: -0.005em !important;
+}
+.font-body-md {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  letter-spacing: 0em !important;
+  font-weight: 400 !important;
+}
+.text-body-md {
+  font-size: 14px !important;
+  line-height: 20px !important;
+  letter-spacing: 0em !important;
+}
+.font-body-sm {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  letter-spacing: 0em !important;
+  font-weight: 400 !important;
+}
+.text-body-sm {
+  font-size: 12px !important;
+  line-height: 16px !important;
+  letter-spacing: 0em !important;
+}
+.font-label-md {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  line-height: 16px !important;
+  letter-spacing: 0.01em !important;
+  font-weight: 500 !important;
+}
+.text-label-md {
+  font-size: 13px !important;
+  line-height: 16px !important;
+  letter-spacing: 0.01em !important;
+}
+.font-label-sm {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11px !important;
+  line-height: 14px !important;
+  letter-spacing: 0.04em !important;
+  font-weight: 600 !important;
+}
+.text-label-sm {
+  font-size: 11px !important;
+  line-height: 14px !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Material symbols */
 .material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
+  font-family: 'Material Symbols Outlined' !important;
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -79,7 +213,7 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom scrollbars */
+/* Scrollbar formatting */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;

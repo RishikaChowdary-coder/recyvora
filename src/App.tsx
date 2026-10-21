@@ -13,6 +13,8 @@ import { BusinessHub } from './components/BusinessHub';
 import { PickupTrackingModal } from './components/PickupTrackingModal';
 import { CertificateModal } from './components/CertificateModal';
 import { NotificationsModal } from './components/NotificationsModal';
+import { ScreenSwitcherBar } from './components/ScreenSwitcherBar';
+import { ReferenceImageModal } from './components/ReferenceImageModal';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>('landing');
@@ -21,6 +23,7 @@ export default function App() {
   const [trackingPickup, setTrackingPickup] = useState<ScrapPickup | null>(null);
   const [showCertificate, setShowCertificate] = useState<boolean>(false);
   const [showNotifications, setShowNotifications] = useState<boolean>(false);
+  const [activeReferenceScreen, setActiveReferenceScreen] = useState<string | null>(null);
 
   // Pre-fill state when coming from Price Estimator
   const [prefilledMaterial, setPrefilledMaterial] = useState<{ name: string; rate: number } | null>(null);
@@ -43,7 +46,7 @@ export default function App() {
         role: 'collector',
         facilityId: 'COL-104',
         companyName: 'Recyvora Fleet Logistics',
-        avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200'
+        avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDrD35kzcKUnxlHZK3KEtuIQBtTNj4jGBwWpFRL-k6cTS_ms54HznpRMlsle9XFeF6J69FpfZYdcSeLfoyubBbCB3nVe0nUA_mr81zYAahisQGk9wRVLWZqj_PuL-zo2HUzptOE3QZETnWShbl-cVESkzRhA5AUZkKp4DtL_zHTEjHZg7cBlH4zIBZwlgfcmX9NvIRD2gW8zfyPLwrsmUMel-R6myErJAvIPWSbOd7lYHMDkud7KRUNhw'
       });
       setCurrentPath('dashboard');
     } else if (role === 'partner') {
@@ -53,7 +56,7 @@ export default function App() {
         role: 'partner',
         facilityId: 'PRT-900',
         companyName: 'CleanCycle Hydrometallurgy Labs',
-        avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200'
+        avatarUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDrD35kzcKUnxlHZK3KEtuIQBtTNj4jGBwWpFRL-k6cTS_ms54HznpRMlsle9XFeF6J69FpfZYdcSeLfoyubBbCB3nVe0nUA_mr81zYAahisQGk9wRVLWZqj_PuL-zo2HUzptOE3QZETnWShbl-cVESkzRhA5AUZkKp4DtL_zHTEjHZg7cBlH4zIBZwlgfcmX9NvIRD2gW8zfyPLwrsmUMel-R6myErJAvIPWSbOd7lYHMDkud7KRUNhw'
       });
       setCurrentPath('e-waste-requests');
     } else {
@@ -62,109 +65,106 @@ export default function App() {
     }
   };
 
+  const handleNavigate = (path: string) => {
+    setCurrentPath(path);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const isPublic = currentPath === 'landing';
 
   return (
-    <div className="min-h-screen bg-surface font-sans text-on-surface antialiased">
-      {/* Navigation Shell */}
+    <div className="min-h-screen bg-surface font-sans text-on-surface antialiased flex flex-col">
+      {/* 1-Click Screen Navigation Bar (Directly switch between Screen 1, 2, 3, 4) */}
+      <ScreenSwitcherBar
+        currentPath={currentPath}
+        onNavigate={handleNavigate}
+        onOpenReferenceImage={(screenId) => setActiveReferenceScreen(screenId)}
+      />
+
+      {/* Top Header / Left Sidebar Shell */}
       <Navigation
         currentPath={currentPath}
-        onNavigate={(path) => {
-          setCurrentPath(path);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+        onNavigate={handleNavigate}
         currentUser={currentUser}
         onSwitchRole={handleSwitchRole}
         onOpenNotifications={() => setShowNotifications(true)}
       />
 
-      {/* Main View Area */}
-      <main className={`w-full ${isPublic ? 'pt-16' : 'md:pl-72 pt-16'}`}>
+      {/* Main Interactive Screen Content (Rendered directly from HTML files) */}
+      <main className={`flex-1 w-full ${isPublic ? '' : 'md:pl-72 pt-16'}`}>
+        {/* Screen 1: Landing Page (from Image_2_156418d7.html) */}
         {currentPath === 'landing' && (
-          <LandingPage
-            onNavigate={(path) => {
-              setCurrentPath(path);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+          <div className="pt-16">
+            <LandingPage onNavigate={handleNavigate} />
+          </div>
+        )}
+
+        {/* Screen 2: Schedule a Scrap Pickup (from Image_4_3bcff0b6.html) */}
+        {currentPath === 'schedule-pickup' && (
+          <SchedulePickup
+            onPickupCreated={handlePickupCreated}
+            onNavigate={handleNavigate}
+            initialMaterial={prefilledMaterial?.name}
+            initialRate={prefilledMaterial?.rate}
           />
         )}
 
+        {/* Screen 3: Scrap Price Estimator (from Image_6_b8866f61.html) */}
+        {currentPath === 'scrap-price-estimator' && (
+          <PriceEstimator
+            onLockAndSchedule={handleLockAndSchedule}
+            onNavigate={handleNavigate}
+          />
+        )}
+
+        {/* Screen 4: Operational Overview Dashboard (from Image_8_8270ebd3.html) */}
         {currentPath === 'dashboard' && (
           <Dashboard
             pickups={pickups}
-            onNavigate={(path) => {
-              setCurrentPath(path);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+            onNavigate={handleNavigate}
             onOpenTracking={(p) => setTrackingPickup(p)}
             onOpenCertificate={() => setShowCertificate(true)}
             facilityId={currentUser.facilityId}
           />
         )}
 
-        {currentPath === 'schedule-pickup' && (
-          <SchedulePickup
-            onPickupCreated={handlePickupCreated}
-            onNavigate={(path) => {
-              setCurrentPath(path);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-            initialMaterial={prefilledMaterial?.name}
-            initialRate={prefilledMaterial?.rate}
-          />
-        )}
-
-        {currentPath === 'scrap-price-estimator' && (
-          <PriceEstimator
-            onLockAndSchedule={handleLockAndSchedule}
-            onNavigate={(path) => {
-              setCurrentPath(path);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          />
-        )}
-
+        {/* Circular Recommerce Marketplace */}
         {currentPath === 'marketplace' && (
-          <Marketplace
-            onNavigate={(path) => {
-              setCurrentPath(path);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          />
+          <Marketplace onNavigate={handleNavigate} />
         )}
 
+        {/* E-Waste Management Portal */}
         {currentPath === 'e-waste-requests' && (
           <EWastePortal
-            onNavigate={(path) => {
-              setCurrentPath(path);
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
+            onNavigate={handleNavigate}
             onOpenCertificate={() => setShowCertificate(true)}
           />
         )}
 
+        {/* EcoGuide AI Assistant */}
         {currentPath === 'ecoguide-ai' && <EcoGuideAI />}
 
+        {/* My Pickups / Orders View */}
         {(currentPath === 'my-pickups' || currentPath === 'orders') && (
           <div className="px-gutter-lg py-space-xl">
             <Dashboard
               pickups={pickups}
-              onNavigate={(path) => setCurrentPath(path)}
+              onNavigate={handleNavigate}
               onOpenTracking={(p) => setTrackingPickup(p)}
               onOpenCertificate={() => setShowCertificate(true)}
             />
           </div>
         )}
 
+        {/* Real-Time Pickup Tracking Screen */}
         {currentPath === 'pickup-tracking' && (
           <div className="px-gutter-lg py-space-xl">
             <Dashboard
               pickups={pickups}
-              onNavigate={(path) => setCurrentPath(path)}
+              onNavigate={handleNavigate}
               onOpenTracking={(p) => setTrackingPickup(p)}
               onOpenCertificate={() => setShowCertificate(true)}
             />
-            {/* Auto-open tracking for the next priority pickup */}
             <PickupTrackingModal
               pickup={pickups.find((p) => p.isPriorityNext) || pickups[0]}
               onClose={() => setCurrentPath('dashboard')}
@@ -172,13 +172,15 @@ export default function App() {
           </div>
         )}
 
+        {/* Business Hub & ESG Reporting */}
         {(currentPath === 'business' || currentPath === 'reports' || currentPath === 'environmental-impact') && (
           <BusinessHub
             onOpenCertificate={() => setShowCertificate(true)}
-            onNavigate={(path) => setCurrentPath(path)}
+            onNavigate={handleNavigate}
           />
         )}
 
+        {/* Ancillary Settings & Account Pages */}
         {(currentPath === 'settings' || currentPath === 'help-support' || currentPath === 'my-listings' || currentPath === 'earnings') && (
           <div className="px-gutter-lg py-space-xl max-w-4xl">
             <div className="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm border border-outline-variant/30 space-y-4">
@@ -194,8 +196,8 @@ export default function App() {
               </p>
               <div className="pt-4 border-t border-outline-variant/20 flex gap-3">
                 <button
-                  onClick={() => setCurrentPath('dashboard')}
-                  className="px-4 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold"
+                  onClick={() => handleNavigate('dashboard')}
+                  className="px-4 py-2 bg-primary text-on-primary rounded-lg text-sm font-semibold hover:bg-tertiary-container transition-colors"
                 >
                   Return to Dashboard
                 </button>
@@ -205,7 +207,7 @@ export default function App() {
         )}
       </main>
 
-      {/* Footer for Public Landing Page */}
+      {/* Public Footer for Landing Page */}
       {isPublic && (
         <footer className="w-full bg-surface-container-low mt-space-xl border-t border-outline-variant/30">
           <div className="max-w-7xl mx-auto px-margin-md lg:px-margin-lg py-margin-lg">
@@ -267,9 +269,17 @@ export default function App() {
         <NotificationsModal
           onClose={() => setShowNotifications(false)}
           onNavigate={(path) => {
-            setCurrentPath(path);
+            handleNavigate(path);
             setShowNotifications(false);
           }}
+        />
+      )}
+
+      {/* Design Reference Spec Modal */}
+      {activeReferenceScreen && (
+        <ReferenceImageModal
+          screenId={activeReferenceScreen}
+          onClose={() => setActiveReferenceScreen(null)}
         />
       )}
     </div>
