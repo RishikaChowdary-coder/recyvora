@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MaterialCategory } from '../types';
 import { commodityBenchmarks } from '../data/mockData';
+import { useToast } from './Toast';
 
 interface PriceEstimatorProps {
   onLockAndSchedule: (material: string, rate: number) => void;
@@ -47,6 +48,7 @@ const categoryMaterials: Record<MaterialCategory, MaterialSpec[]> = {
 };
 
 export const PriceEstimator: React.FC<PriceEstimatorProps> = ({ onLockAndSchedule, onNavigate }) => {
+  const { showToast } = useToast();
   const [selectedCategory, setSelectedCategory] = useState<MaterialCategory>('non-ferrous');
   const [selectedMaterialId, setSelectedMaterialId] = useState<string>('copper-grade-1');
   const [lotQuantity, setLotQuantity] = useState<number>(50);
@@ -131,11 +133,10 @@ export const PriceEstimator: React.FC<PriceEstimatorProps> = ({ onLockAndSchedul
 
   const handleExportPDF = () => {
     const netFormatted = `₹${Math.round(netPayout).toLocaleString('en-IN')}`;
-    alert(
-      `Recyvora Valuation Slip\nMaterial: ${currentMaterial.name}\nNet Payout: ${netFormatted}\nStatus: Verified Against Benchmark Indexes\nGenerated: ${new Date().toLocaleDateString(
-        'en-IN',
-        { dateStyle: 'full' }
-      )}\n\nCertificate queued for download (PDF renderer).`
+    showToast(
+      `Valuation Slip generated for ${currentMaterial.name} (${netFormatted}). Certificate queued for download.`,
+      'success',
+      'Valuation Slip Ready'
     );
   };
 
@@ -702,7 +703,7 @@ export const PriceEstimator: React.FC<PriceEstimatorProps> = ({ onLockAndSchedul
             <span className="mx-2 text-outline-variant">•</span>
             <button
               type="button"
-              onClick={() => alert('Full CSV Price Sheet generated and ready for ERP integration.')}
+              onClick={() => showToast('Full CSV Price Sheet generated and ready for ERP integration.', 'success', 'Export Complete')}
               className="text-primary hover:underline font-semibold"
             >
               Download Full Price Sheet (CSV)

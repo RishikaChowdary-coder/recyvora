@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { EWasteItem } from '../types';
 import { ewasteRequests as initialEWaste } from '../data/mockData';
+import { useToast } from './Toast';
 
 interface EWastePortalProps {
   onNavigate: (path: string) => void;
@@ -8,6 +9,7 @@ interface EWastePortalProps {
 }
 
 export const EWastePortal: React.FC<EWastePortalProps> = ({ onNavigate, onOpenCertificate }) => {
+  const { showToast } = useToast();
   const [requests, setRequests] = useState<EWasteItem[]>(initialEWaste);
   const [showRequestModal, setShowRequestModal] = useState<boolean>(false);
 
@@ -37,7 +39,7 @@ export const EWastePortal: React.FC<EWastePortalProps> = ({ onNavigate, onOpenCe
 
     setRequests([newReq, ...requests]);
     setShowRequestModal(false);
-    alert('E-Waste Compliance Audit & Haulage Request registered! Form-6 tracking initiated.');
+    showToast('E-Waste Compliance Audit & Haulage Request registered! Form-6 tracking initiated.', 'success', 'Audit Registered');
   };
 
   return (

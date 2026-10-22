@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MarketplaceProduct } from '../types';
 import { marketplaceProducts } from '../data/mockData';
+import { useToast } from './Toast';
 
 interface LandingPageProps {
   onNavigate: (path: string) => void;
@@ -8,6 +9,7 @@ interface LandingPageProps {
 }
 
 export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate, onSelectProduct }) => {
+  const { showToast } = useToast();
   const [selectedProduct, setSelectedProduct] = useState<MarketplaceProduct | null>(null);
 
   const handleProductClick = (prod: MarketplaceProduct) => {
@@ -969,7 +971,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onNavigate, onSelectPr
               </button>
               <button
                 onClick={() => {
-                  alert(`Purchase Inquiry Submitted for ${selectedProduct.title}!\nOur escrow coordinator has reserved this asset and notified ${selectedProduct.sellerName}.`);
+                  showToast(`Purchase Inquiry Submitted for ${selectedProduct.title}! Our escrow coordinator has reserved this asset and notified ${selectedProduct.sellerName}.`, 'success', 'Inquiry Registered');
                   setSelectedProduct(null);
                 }}
                 className="flex-1 py-2 bg-primary text-on-primary rounded-lg font-semibold text-sm hover:bg-tertiary-container shadow-sm flex items-center justify-center gap-2"

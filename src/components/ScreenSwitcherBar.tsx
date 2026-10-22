@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface ScreenSwitcherBarProps {
   currentPath: string;
@@ -11,104 +11,111 @@ export const ScreenSwitcherBar: React.FC<ScreenSwitcherBarProps> = ({
   onNavigate,
   onOpenReferenceImage
 }) => {
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+
   const screens = [
     {
       id: 'landing',
-      label: 'Screen 1: Landing Page',
-      badge: 'Public Portal',
+      label: 'Screen 1: Landing',
+      shortLabel: 'Screen 1: Landing',
       icon: 'public',
-      refImg: '/assets/aistudio/Image_1_315ffb3d.png'
+      tag: 'Public'
     },
     {
       id: 'schedule-pickup',
-      label: 'Screen 2: Schedule Pickup',
-      badge: 'Step 3 Form',
+      label: 'Screen 2: Schedule',
+      shortLabel: 'Screen 2: Schedule',
       icon: 'calendar_today',
-      refImg: '/assets/aistudio/Image_3_9ab386d8.png'
+      tag: 'Pickup'
     },
     {
       id: 'scrap-price-estimator',
-      label: 'Screen 3: Price Estimator',
-      badge: 'Valuation & Index',
+      label: 'Screen 3: Estimator',
+      shortLabel: 'Screen 3: Estimator',
       icon: 'calculate',
-      refImg: '/assets/aistudio/Image_5_84715e2b.png'
+      tag: 'Pricing'
     },
     {
       id: 'dashboard',
-      label: 'Screen 4: Overview Dashboard',
-      badge: 'Operational KPIs',
+      label: 'Screen 4: Dashboard',
+      shortLabel: 'Screen 4: Dashboard',
       icon: 'space_dashboard',
-      refImg: '/assets/aistudio/Image_7_d4554119.png'
+      tag: 'Operations'
     }
   ];
 
   const currentScreen = screens.find((s) => s.id === currentPath);
 
+  if (collapsed) {
+    return (
+      <div className="fixed bottom-4 right-4 z-[9990]">
+        <button
+          onClick={() => setCollapsed(false)}
+          className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-primary text-on-primary shadow-xl hover:bg-tertiary-container transition-all font-semibold text-xs border border-white/20"
+          title="Open Screen Switcher"
+        >
+          <span className="material-symbols-outlined text-[18px]">layers</span>
+          <span>Screens (4)</span>
+        </button>
+      </div>
+    );
+  }
+
   return (
-    <div className="sticky top-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/40 shadow-xs px-4 py-2">
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-        {/* Left: Direct Screen Navigator Tabs */}
-        <div className="flex items-center gap-1.5 overflow-x-auto py-0.5 scrollbar-none">
-          <span className="text-[11px] font-bold text-outline uppercase tracking-wider hidden sm:inline mr-1">
-            Screens:
-          </span>
+    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[9990] max-w-[95vw]">
+      <div className="bg-surface-container-lowest/95 backdrop-blur-xl border border-outline-variant/60 shadow-2xl rounded-2xl px-3 py-2 flex items-center gap-1.5 sm:gap-2">
+        {/* Badge */}
+        <div className="hidden lg:flex items-center gap-1.5 pl-1 pr-2 border-r border-outline-variant/40 text-xs">
+          <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          <span className="font-bold text-on-surface">Screen Switcher</span>
+        </div>
+
+        {/* Screen Buttons */}
+        <div className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto py-0.5">
           {screens.map((screen, idx) => {
             const isActive = currentPath === screen.id;
             return (
               <button
                 key={screen.id}
                 onClick={() => onNavigate(screen.id)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap ${
+                className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap ${
                   isActive
-                    ? 'bg-primary-container text-on-primary shadow-sm'
+                    ? 'bg-primary-container text-on-primary shadow-sm ring-1 ring-primary'
                     : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface'
                 }`}
+                title={screen.label}
               >
                 <span className="w-4 h-4 rounded-full bg-black/15 text-[10px] flex items-center justify-center font-mono">
                   {idx + 1}
                 </span>
                 <span className="material-symbols-outlined text-[15px]">{screen.icon}</span>
-                <span>{screen.label.replace(/Screen \d+: /, '')}</span>
-                <span className={`text-[10px] px-1 py-0.2 rounded font-normal hidden md:inline ${
-                  isActive ? 'bg-primary/20 text-on-primary' : 'bg-surface-container-high text-outline'
-                }`}>
-                  {screen.badge}
-                </span>
+                <span className="hidden sm:inline">{screen.label.replace('Screen ', 'Screen ')}</span>
+                <span className="sm:hidden">#{idx + 1}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Right: Quick shortcuts & Reference Image Modal trigger */}
-        <div className="flex items-center gap-2">
+        {/* Reference Image Inspector Modal Trigger */}
+        <div className="flex items-center gap-1.5 pl-1.5 border-l border-outline-variant/40">
           {currentScreen && (
             <button
               onClick={() => onOpenReferenceImage(currentScreen.id)}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-medium bg-surface-container hover:bg-secondary-container text-on-surface transition-colors border border-outline-variant/30"
-              title="Compare with original design screenshot"
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-semibold bg-secondary-container text-on-secondary-container hover:bg-secondary-container/80 transition-colors"
+              title="Compare live screen with original HTML design reference"
             >
               <span className="material-symbols-outlined text-[15px] text-primary">visibility</span>
-              <span className="hidden sm:inline">Reference Spec</span>
+              <span className="hidden md:inline">Inspect Spec</span>
             </button>
           )}
 
-          <div className="h-4 w-px bg-outline-variant/40 hidden sm:block"></div>
-
+          {/* Minimize / Collapse */}
           <button
-            onClick={() => onNavigate('marketplace')}
-            className={`px-2 py-1 rounded text-xs font-medium transition-colors ${
-              currentPath === 'marketplace' ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-on-surface'
-            }`}
+            onClick={() => setCollapsed(true)}
+            className="p-1 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container text-xs transition-colors"
+            title="Minimize bar"
           >
-            Marketplace
-          </button>
-          <button
-            onClick={() => onNavigate('e-waste-requests')}
-            className={`px-2 py-1 rounded text-xs font-medium transition-colors ${
-              currentPath === 'e-waste-requests' ? 'text-primary font-bold' : 'text-on-surface-variant hover:text-on-surface'
-            }`}
-          >
-            E-Waste
+            <span className="material-symbols-outlined text-[16px]">close</span>
           </button>
         </div>
       </div>

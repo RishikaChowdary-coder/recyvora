@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ScrapPickup } from '../types';
+import { useToast } from './Toast';
 
 interface DashboardProps {
   pickups: ScrapPickup[];
@@ -16,6 +17,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
   onOpenCertificate,
   facilityId = 'DEL-8803'
 }) => {
+  const { showToast } = useToast();
   const [timeRange, setTimeRange] = useState<string>('30');
   const [activeChartMonth, setActiveChartMonth] = useState<string | null>(null);
   const [selectedPickupDetail, setSelectedPickupDetail] = useState<ScrapPickup | null>(null);
@@ -126,7 +128,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
               <button
                 type="button"
                 onClick={() => {
-                  alert(`Reschedule requested for ${nextPickup.requestNumber}. Dispatch coordinator will offer next available slots.`);
+                  showToast(`Reschedule requested for ${nextPickup.requestNumber}. Dispatch coordinator will offer next available slots.`, 'info', 'Reschedule Requested');
                 }}
                 className="px-space-md py-2 bg-surface-container text-on-surface-variant hover:text-on-surface rounded-lg font-label-md text-label-md transition-colors"
               >

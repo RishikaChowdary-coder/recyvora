@@ -15,8 +15,10 @@ import { CertificateModal } from './components/CertificateModal';
 import { NotificationsModal } from './components/NotificationsModal';
 import { ScreenSwitcherBar } from './components/ScreenSwitcherBar';
 import { ReferenceImageModal } from './components/ReferenceImageModal';
+import { ToastProvider, useToast } from './components/Toast';
 
-export default function App() {
+function AppContent() {
+  const { showToast } = useToast();
   const [currentPath, setCurrentPath] = useState<string>('landing');
   const [pickups, setPickups] = useState<ScrapPickup[]>(initialPickups);
   const [currentUser, setCurrentUser] = useState<UserProfile>(defaultUser);
@@ -74,13 +76,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-surface font-sans text-on-surface antialiased flex flex-col">
-      {/* 1-Click Screen Navigation Bar (Directly switch between Screen 1, 2, 3, 4) */}
-      <ScreenSwitcherBar
-        currentPath={currentPath}
-        onNavigate={handleNavigate}
-        onOpenReferenceImage={(screenId) => setActiveReferenceScreen(screenId)}
-      />
-
       {/* Top Header / Left Sidebar Shell */}
       <Navigation
         currentPath={currentPath}
@@ -90,7 +85,7 @@ export default function App() {
         onOpenNotifications={() => setShowNotifications(true)}
       />
 
-      {/* Main Interactive Screen Content (Rendered directly from HTML files) */}
+      {/* Main Interactive Screen Content (Rendered directly from HTML source specifications) */}
       <main className={`flex-1 w-full ${isPublic ? '' : 'md:pl-72 pt-16'}`}>
         {/* Screen 1: Landing Page (from Image_2_156418d7.html) */}
         {currentPath === 'landing' && (
@@ -207,9 +202,16 @@ export default function App() {
         )}
       </main>
 
+      {/* Floating 1-Click Screen Navigation Dock (Bottom centered, zero layout overlap) */}
+      <ScreenSwitcherBar
+        currentPath={currentPath}
+        onNavigate={handleNavigate}
+        onOpenReferenceImage={(screenId) => setActiveReferenceScreen(screenId)}
+      />
+
       {/* Public Footer for Landing Page */}
       {isPublic && (
-        <footer className="w-full bg-surface-container-low mt-space-xl border-t border-outline-variant/30">
+        <footer className="w-full bg-surface-container-low mt-space-xl border-t border-outline-variant/30 pb-20">
           <div className="max-w-7xl mx-auto px-margin-md lg:px-margin-lg py-margin-lg">
             <div className="flex flex-col md:flex-row items-center justify-between gap-gutter">
               <div className="flex items-center gap-space-sm">
@@ -225,13 +227,13 @@ export default function App() {
               </div>
               <div className="flex items-center gap-gutter-lg">
                 <button
-                  onClick={() => alert('Privacy Policy: All customer scrap manifests and data media destruction logs are stored with SHA-256 tamper-evident security.')}
+                  onClick={() => showToast('All customer scrap manifests and data media destruction logs are stored with SHA-256 tamper-evident security.', 'info', 'Privacy Policy')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   Privacy Policy
                 </button>
                 <button
-                  onClick={() => alert('Terms of Service: Calibrated digital scales must be verified by on-site logistics lead before instant electronic funds transfer.')}
+                  onClick={() => showToast('Calibrated digital scales are verified on-site by certified logistics leads before instant NEFT settlement.', 'info', 'Terms of Service')}
                   className="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
                 >
                   Terms of Service
@@ -275,7 +277,7 @@ export default function App() {
         />
       )}
 
-      {/* Design Reference Spec Modal */}
+      {/* Design Reference Spec Inspector Modal */}
       {activeReferenceScreen && (
         <ReferenceImageModal
           screenId={activeReferenceScreen}
@@ -283,5 +285,13 @@ export default function App() {
         />
       )}
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ToastProvider>
+      <AppContent />
+    </ToastProvider>
   );
 }

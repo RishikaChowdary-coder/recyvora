@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { MarketplaceProduct } from '../types';
 import { marketplaceProducts as initialProducts } from '../data/mockData';
+import { useToast } from './Toast';
 
 interface MarketplaceProps {
   onNavigate: (path: string) => void;
 }
 
 export const Marketplace: React.FC<MarketplaceProps> = ({ onNavigate }) => {
+  const { showToast } = useToast();
   const [products, setProducts] = useState<MarketplaceProduct[]>(initialProducts);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -55,7 +57,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ onNavigate }) => {
     setShowCreateModal(false);
     setNewTitle('');
     setNewDescription('');
-    alert('Asset published successfully to the Recyvora Recommerce Marketplace!');
+    showToast('Asset published successfully to the Recyvora Recommerce Marketplace!', 'success', 'Listing Active');
   };
 
   return (
@@ -255,8 +257,10 @@ export const Marketplace: React.FC<MarketplaceProps> = ({ onNavigate }) => {
               </button>
               <button
                 onClick={() => {
-                  alert(
-                    `Purchase Request Logged for ${selectedProduct.title}!\nOur logistics team will coordinate dispatch to your dock.`
+                  showToast(
+                    `Purchase Request Logged for ${selectedProduct.title}! Our logistics team will coordinate dispatch to your dock.`,
+                    'success',
+                    'Escrow Reserved'
                   );
                   setSelectedProduct(null);
                 }}

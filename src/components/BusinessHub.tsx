@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useToast } from './Toast';
 
 interface BusinessHubProps {
   onOpenCertificate: () => void;
@@ -6,6 +7,7 @@ interface BusinessHubProps {
 }
 
 export const BusinessHub: React.FC<BusinessHubProps> = ({ onOpenCertificate, onNavigate }) => {
+  const { showToast } = useToast();
   const [activeTab, setActiveTab] = useState<'facilities' | 'recurring' | 'reports'>('facilities');
 
   const facilities = [
@@ -163,7 +165,7 @@ export const BusinessHub: React.FC<BusinessHubProps> = ({ onOpenCertificate, onN
               <p className="text-xs text-outline">Standing collection schedules with pre-assigned heavy logistics</p>
             </div>
             <button
-              onClick={() => alert('New recurring contract builder opened. Contact assigned account coordinator.')}
+              onClick={() => showToast('New recurring contract builder opened. Contact assigned account coordinator.', 'info', 'Recurring Rule Builder')}
               className="px-3 py-1.5 bg-primary text-on-primary text-xs font-semibold rounded-lg"
             >
               + Create Recurring Rule

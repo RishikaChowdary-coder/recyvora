@@ -228,3 +228,62 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #6f7973;
 }
+
+/* Explicit Spacing Utilities for Design System Tokens */
+.p-space-xs { padding: 0.25rem !important; }
+.p-space-sm { padding: 0.5rem !important; }
+.p-space-md { padding: 0.75rem !important; }
+.p-space-lg { padding: 1.25rem !important; }
+.p-space-xl { padding: 2rem !important; }
+
+.px-space-xs { padding-left: 0.25rem !important; padding-right: 0.25rem !important; }
+.px-space-sm { padding-left: 0.5rem !important; padding-right: 0.5rem !important; }
+.px-space-md { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+.px-space-lg { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+.px-space-xl { padding-left: 2rem !important; padding-right: 2rem !important; }
+
+.py-space-xs { padding-top: 0.25rem !important; padding-bottom: 0.25rem !important; }
+.py-space-sm { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+.py-space-md { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
+.py-space-lg { padding-top: 1.25rem !important; padding-bottom: 1.25rem !important; }
+.py-space-xl { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+
+.px-gutter-lg { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+.px-margin-md { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+.px-margin-lg { padding-left: 2rem !important; padding-right: 2rem !important; }
+
+.gap-space-xs { gap: 0.25rem !important; }
+.gap-space-sm { gap: 0.5rem !important; }
+.gap-space-md { gap: 0.75rem !important; }
+.gap-space-lg { gap: 1.25rem !important; }
+.gap-space-xl { gap: 2rem !important; }
+.gap-gutter { gap: 1rem !important; }
+.gap-gutter-lg { gap: 1.5rem !important; }
+
+.mb-space-xs { margin-bottom: 0.25rem !important; }
+.mb-space-sm { margin-bottom: 0.5rem !important; }
+.mb-space-md { margin-bottom: 0.75rem !important; }
+.mb-space-lg { margin-bottom: 1.25rem !important; }
+.mb-space-xl { margin-bottom: 2rem !important; }
+
+.mt-space-xs { margin-top: 0.25rem !important; }
+.mt-space-sm { margin-top: 0.5rem !important; }
+.mt-space-md { margin-top: 0.75rem !important; }
+.mt-space-lg { margin-top: 1.25rem !important; }
+.mt-space-xl { margin-top: 2rem !important; }
+
+.pb-space-md { padding-bottom: 0.75rem !important; }
+.pb-space-lg { padding-bottom: 1.25rem !important; }
+.pb-space-xl { padding-bottom: 2rem !important; }
+.pt-space-sm { padding-top: 0.5rem !important; }
+.pt-space-md { padding-top: 0.75rem !important; }
+.pt-space-lg { padding-top: 1.25rem !important; }
+.pt-space-xl { padding-top: 2rem !important; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in {
+  animation: slideIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

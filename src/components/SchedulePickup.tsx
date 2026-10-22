@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ScrapPickup, ManifestItem } from '../types';
+import { useToast } from './Toast';
 
 interface SchedulePickupProps {
   onPickupCreated: (pickup: ScrapPickup) => void;
@@ -14,6 +15,7 @@ export const SchedulePickup: React.FC<SchedulePickupProps> = ({
   initialMaterial,
   initialRate
 }) => {
+  const { showToast } = useToast();
   const [currentStep, setCurrentStep] = useState<number>(3); // Matches the mockup screen which shows Step 3 Active!
   const [facilityAddress, setFacilityAddress] = useState<string>('HQ Bangalore Tech Park - Dock 4 (Saved)');
   const [streetAddress, setStreetAddress] = useState<string>('Plot 42, Outer Ring Road, Devarabisanahalli');
@@ -816,7 +818,7 @@ export const SchedulePickup: React.FC<SchedulePickupProps> = ({
               <span>{currentStep === 1 ? 'Back to Dashboard' : 'Back to Details'}</span>
             </button>
             <button
-              onClick={() => alert('Draft saved successfully to your facility manifest ledger.')}
+              onClick={() => showToast('Draft saved successfully to your facility manifest ledger.', 'success', 'Draft Saved')}
               className="hidden sm:inline-flex items-center gap-space-xs px-space-md py-2.5 text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors"
               type="button"
             >

@@ -48,8 +48,10 @@ export const EcoGuideAI: React.FC = () => {
     setIsLoading(true);
 
     try {
-      // Check if API key is present in environment
-      const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || (process as any).env?.GEMINI_API_KEY;
+      // Check if API key is present in environment safely
+      const apiKey =
+        (import.meta as any).env?.VITE_GEMINI_API_KEY ||
+        (typeof process !== 'undefined' ? (process as any)?.env?.GEMINI_API_KEY : undefined);
 
       if (apiKey) {
         const ai = new GoogleGenAI({ apiKey });
